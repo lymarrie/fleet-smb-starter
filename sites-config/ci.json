@@ -34,7 +34,7 @@
     ]
   },
   "buildArtifacts": {
-    "buildCmd": "npm run prod"
+    "buildCmd": "pages build"
   },
   "livePreview": {
     "serveSetupCmd": ":"
