@@ -16,9 +16,13 @@ import Favicon from "../assets/images/yext-favicon.ico";
 import About from "../components/About";
 import Banner from "../components/Banner";
 import Carousel from "../components/Carousel";
-import Hours from "../components/Hours";
+// import Hours from "../components/Hours";
 import PageLayout from "../components/PageLayout";
 import Schema from "../components/Schema";
+
+import loadable from "@loadable/component";
+const Hours = loadable(() => import("../components/Hours"));
+
 
 
 
@@ -26,7 +30,7 @@ export const config: TemplateConfig = {
   stream: {
     $id: "Location",
     filter: {
-      entityIds: [YEXT_PUBLIC_LOCATION_ENTITY_ID],
+      entityIds: ["test-location"],
     },
     fields: [
       "id",
@@ -47,8 +51,7 @@ export const config: TemplateConfig = {
       "c_backgroundColor"
     ],
     localization: {
-      locales: [YEXT_PUBLIC_LOCATION_LOCALE_CODE],
-      primary: false,
+      locales: ["en"]
     },
     transform: {
       replaceOptionValuesWithDisplayNames: [
@@ -130,7 +133,7 @@ const Location: Template<TemplateRenderProps> = ({
         <Banner name={name} photoGallery={photoGallery} />
         <About description={description} />
         {hours && <Hours title={"Hours"} hours={hours} />}
-        <Carousel title={"Gallery"} photoGallery={photoGallery}></Carousel>
+        {/* <Carousel title={"Gallery"} photoGallery={photoGallery}></Carousel> */}
       </PageLayout>
     </>
   );
