@@ -28,7 +28,7 @@ export const config: TemplateConfig = {
   stream: {
     $id: "Location",
     filter: {
-      entityIds: [YEXT_PUBLIC_LOCATION_ENTITY_ID],
+      entityIds: [LOCATION_ENTITY_ID],
     },
     fields: [
       "id",
@@ -49,7 +49,7 @@ export const config: TemplateConfig = {
       "c_backgroundColor"
     ],
     localization: {
-      locales: [YEXT_PUBLIC_LOCATION_LOCALE_CODE]
+      locales: [LOCATION_LOCALE_CODE]
     },
     transform: {
       replaceOptionValuesWithDisplayNames: [
@@ -62,7 +62,7 @@ export const config: TemplateConfig = {
 
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  return document.slug;
+  return 'not-yext-public.html';
 };
 
 
