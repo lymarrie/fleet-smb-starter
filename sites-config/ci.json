@@ -34,6 +34,7 @@
     ]
   },
   "buildArtifacts": {
+    "buildSetupCmd": "ECHO $LOCATION_ENTITY_ID",
     "buildCmd": "npm run build:local"
   },
   "livePreview": {
